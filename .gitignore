@@ -1,0 +1,6 @@
+# compiled Python files
+*.pyc
+
+# vim files
+.*.s[a-w][a-z]
+

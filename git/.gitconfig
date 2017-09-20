@@ -1,0 +1,23 @@
+[user]
+	name = Petru-Armand Bancila
+	email = petrubancila@gmail.com
+
+# correct typos
+[help]
+	autocorrect = 1
+
+# use custom .gitignore
+[core]
+	excludesfile = $HOME/.gitignore
+
+[color]
+	ui = auto
+
+[url "https://bitbucket.org/"]
+	insteadOf = bb:
+
+[url "git@github.com:"]
+	insteadOf = gh:
+
+[url "https://gist.github.com/"]
+	insteadOf = gist:
