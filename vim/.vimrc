@@ -18,6 +18,12 @@ set updatetime=750 " faster response time when vim is inactive
 set scrolloff=5 " number of lines to keep above / below the cursor
 set nomodeline " because apparently 'ex: P' is a modeline
 
+" new split to right and bottom
+if has("wiundows")
+	set splitbelow
+	set splitright
+endif
+
 " don't change the title permanently
 if has("title")
 	set title
@@ -32,18 +38,6 @@ if has("mouse")
   set mouse=a
 endif
 
-" autocomplete
-"" enhance command-line completion
-if has("wildmenu")
-	set wildmenu
-	set wildmode=longest,list
-	set wildignore+=*.a,*.o
-	set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
-	set wildignore+=.DS_Store,.git,.hg,.svn
-	set wildignore+=*~,*.swp,*.tmp
-endif
-set showcmd " show the (partial) command as it's being typed
-
 " key remap
 "" autocomplete in insert mode with tab
 """ inoremap <Tab> <C-X><C-F>
@@ -57,6 +51,54 @@ nnoremap K <nop>
 """ inconsistency fix, yank from cursor till end
 nnoremap Y y$
 
+" searching
+set ignorecase
+set infercase " ignore in autocompletion
+set smartcase " ignore case only when lowercase search
+if has("extra_search")
+	set incsearch " incremental search
+	set hlsearch " highlight all matches of search
+endif
+"" use ripgrep
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" tabs, spaces, autoindent
+set noexpandtab " a tab is a tab, no spaces
+set tabstop=4 " visually 4 spaces wide
+set softtabstop=4 " when equal to tabstop, vim will always use tabs and not add spaces when hitting tab in insert mode
+set shiftwidth=4 " how many columns text is indented with << and >>
+set autoindent " apply indentation of current line to next (o, O, [i]enter)
+if has("smartindent")
+	set smartindent " adapt to the indentation style of file
+endif
+if has("autocmd")
+	autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 " 1 tab = 4 spaces for python files
+endif
+set list " visible tabs and trailing spaces
+set listchars=tab:>-,trail:~ " tabs as >--- and trailing spaces as ~
+set backspace=indent,eol,start " backspace through everything
+"" stop cursorline from highlighting tabs and trailing spaces
+if has("autocmd")
+	au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
+	au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
+endif
+
+" autocomplete
+"" enhance command-line completion
+if has("wildmenu")
+	set wildmenu
+	set wildmode=longest,list
+	set wildignore+=*.a,*.o
+	set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+	set wildignore+=.DS_Store,.git,.hg,.svn
+	set wildignore+=*~,*.swp,*.tmp
+endif
+set showcmd " show the (partial) command as it's being typed
+
+
 " text formatting
 if has("multi_byte")
 	set encoding=utf-8
@@ -68,12 +110,6 @@ if has("linebreak")
 endif
 if has("folding")
 	set foldmethod=marker " set default folding for text
-endif
-
-" new split to right and bottom
-if has("wiundows")
-	set splitbelow
-	set splitright
 endif
 
 " syntax highlighting
@@ -118,40 +154,5 @@ if has("statusline")
 	set statusline+=%5*/\ %L\ %*    " total lines
 	set statusline+=%2*\ %4v\ %*    " virtual column number
 	set statusline+=%3*\ 0x%04B\ %* " character under cursor
-endif
-
-" searching
-set ignorecase
-set infercase " ignore in autocompletion
-set smartcase " ignore case only when lowercase search
-if has("extra_search")
-	set incsearch " incremental search
-	set hlsearch " highlight all matches of search
-endif
-"" use ripgrep
-if executable("rg")
-    set grepprg=rg\ --vimgrep\ --no-heading
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-
-" tabs, spaces, autoindent
-set noexpandtab " a tab is a tab, no spaces
-set tabstop=4 " visually 4 spaces wide
-set softtabstop=4 " when equal to tabstop, vim will always use tabs and not add spaces when hitting tab in insert mode
-set shiftwidth=4 " how many columns text is indented with << and >>
-set autoindent " apply indentation of current line to next (o, O, [i]enter)
-if has("smartindent")
-	set smartindent " adapt to the indentation style of file
-endif
-if has("autocmd")
-	autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 " 1 tab = 4 spaces for python files
-endif
-set list " visible tabs and trailing spaces
-set listchars=tab:>-,trail:~ " tabs as >--- and trailing spaces as ~
-set backspace=indent,eol,start " backspace through everything
-"" stop cursorline from highlighting tabs and trailing spaces
-if has("autocmd")
-	au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
-	au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
 endif
 

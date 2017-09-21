@@ -12,6 +12,12 @@ URxvt.iso14755: False
 URxvt.iso14755_52: False
 URxvt.visualBell: True
 URxvt.urgentOnBell: True
+URxvt.cursorColor: #d79921
+URxvt*inheritPixmap: false
+! Jump to bottom (prompt) on keypress.
+URxvt*scrollTtyKeypress: true
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
 
 ! enable extensions
 URxvt.perl-ext: default,matcher,tabbed,selection-to-clipboard
