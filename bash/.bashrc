@@ -134,7 +134,7 @@ PS1=${PS1}'\[${LIGHT_PURPLE}\]$(__git_ps1 "(%s) ")'
 ##### jobs
 PS1=${PS1}'\[${LIGHT_RED}\]$(jobscount)'
 ##### end
-PS1=${PS1}'\[${GREEN}\]\$ \[${RESET}\]'
+PS1=${PS1}'\[${YELLOW}\]\$ \[${RESET}\]'
 export PS1
 export PS2='> '
 export PS3='> '
