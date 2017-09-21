@@ -1,10 +1,17 @@
 " general
+set nocompatible " use vim defaults
+set autoread " autoread from file
+set updatetime=750 " faster response time when vim is inactive
+if has("multi_byte")
+	set encoding=utf-8
+	set fileencoding=utf-8
+endif
 "" use the OS clipboard by default (on versions compiled with `+clipboard`)
 if has("clipboard")
 	set clipboard=unnamed,unnamedplus " always interact with the clipboard
 endif
-set nocompatible " use vim defaults
 set nomodeline " because apparently 'ex: P' is a modeline
+"" scrolling
 set ttyfast " fix slow scrolling
 set ttyscroll=3 " scroll 3 rows
 set scrolloff=5 " number of lines to keep above / below the cursor
@@ -15,12 +22,6 @@ set history=1024
 set undolevels=1024
 set noshowmatch " don't jump to matching bracket
 set nojoinspaces " don't insert 2 spaces after '.' '?' '!' with a join (J) command
-set autoread " autoread from file
-set updatetime=750 " faster response time when vim is inactive
-if has("multi_byte")
-	set encoding=utf-8
-	set fileencoding=utf-8
-endif
 
 " kb and mouse input
 "" enable mouse
@@ -81,11 +82,6 @@ endif
 set list " visible tabs and trailing spaces
 set listchars=tab:>-,trail:~ " tabs as >--- and trailing spaces as ~
 set backspace=indent,eol,start " backspace through everything
-"" stop cursorline from highlighting tabs and trailing spaces
-if has("autocmd")
-	au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
-	au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
-endif
 
 " visual changes
 "" new split to right and bottom
@@ -117,11 +113,16 @@ if has("syntax")
 	colorscheme gruvbox
 	set background=dark " use dark theme
 	set cursorline " highlight current line, may cause slowdown
-	hi cursorline cterm=none
-	hi cursorlinenr ctermfg=white
+	hi cursorline cterm=NONE
+	hi cursorlinenr ctermfg=yellow
 endif
 if has("autocmd")
 	autocmd BufEnter * :syntax sync fromstart " do syntax highlight syncing from the start
+endif
+"" stop cursorline from highlighting tabs and trailing spaces
+if has("autocmd")
+	au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
+	au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
 endif
 set t_Co=256 " make vim use 256 colors
 "" statusline
