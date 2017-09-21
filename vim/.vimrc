@@ -16,6 +16,7 @@ set nojoinspaces " don't insert 2 spaces after '.' '?' '!' with a join (J) comma
 set autoread " autoread from file
 set updatetime=750 " faster response time when vim is inactive
 set scrolloff=5 " number of lines to keep above / below the cursor
+set nomodeline " because apparently 'ex: P' is a modeline
 
 " don't change the title permanently
 if has("title")
@@ -90,11 +91,6 @@ if has("autocmd")
 	autocmd BufEnter * :syntax sync fromstart " do syntax highlight syncing from the start
 endif
 set t_Co=256 " make vim use 256 colors
-"" stop cursorline from highlighting tabs and trailing spaces
-if has("autocmd")
-	au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
-	au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
-endif
 
 " statusline
 if has("statusline")
@@ -153,4 +149,9 @@ endif
 set list " visible tabs and trailing spaces
 set listchars=tab:>-,trail:~ " tabs as >--- and trailing spaces as ~
 set backspace=indent,eol,start " backspace through everything
+"" stop cursorline from highlighting tabs and trailing spaces
+if has("autocmd")
+	au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
+	au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
+endif
 
