@@ -80,7 +80,7 @@ tn() {
 	cd ~/Documents/notes
 	./sync.sh
 	if [ ! -z "$1" ]; then
-		echo -e "\n# note taken on $(date --rfc-3339='seconds') $(date +%s)" >> $1
+		echo -e "\n# note taken on $(date --rfc-3339='seconds') $(date +%s)\n" >> $1
 		vimx "+ normal G$" +startinsert $1
 	fi
 }
