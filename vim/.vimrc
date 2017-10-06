@@ -77,7 +77,8 @@ if has("smartindent")
 	set smartindent " adapt to the indentation style of file
 endif
 if has("autocmd")
-	autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 " 1 tab = 4 spaces for python files
+	autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 " 1 tab = 4 spaces for python
+	autocmd Filetype scala setlocal expandtab tabstop=2 shiftwidth=2 " 1 tab = 2 spaces for scala
 endif
 set list " visible tabs and trailing spaces
 set listchars=tab:>-,trail:~ " tabs as >--- and trailing spaces as ~
