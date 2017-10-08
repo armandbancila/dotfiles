@@ -23,7 +23,7 @@ if [ -f ~/.bash_functions ]; then
 fi
 
 ## functions
-### extract any archive format
+### extract common archive formats
 extract () {
 	if [ -f "$*" ] ; then
 		case "$*" in
