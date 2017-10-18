@@ -212,6 +212,8 @@ alias vim='vimx'
 alias xclip='xclip -selection clipboard'
 ### matlab
 alias matlab='/usr/local/MATLAB/R2017b/bin/matlab'
+### increase stack size in scala
+alias scala = 'scala -J-Xss200m'
 ## set default terminal editor (for sudoedit)
 export EDITOR='vimx'
 
