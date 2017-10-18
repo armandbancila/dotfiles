@@ -210,7 +210,8 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias vim='vimx'
 ### use clipboard
 alias xclip='xclip -selection clipboard'
-
+### matlab
+alias matlab='/usr/local/MATLAB/R2017b/bin/matlab'
 ## set default terminal editor (for sudoedit)
 export EDITOR='vimx'
 
