@@ -56,7 +56,7 @@ psgrep() {
 }
 
 ### take ownership of directory
-grab() {
+seize() {
 	sudo chown -R ${USER} ${1:-.}
 }
 
@@ -139,15 +139,9 @@ export PS1
 export PS2='> '
 export PS3='> '
 export PS4='#? '
-### enable color support of ls and also add handy aliases
+### enable color support of ls
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto --group-directories-first'
-	#alias dir='dir --color=auto'
-	#alias vdir='vdir --color=auto'
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
 fi
 ### ls colors
 LS_COLORS=$LS_COLORS:'ex=1;92:di=1;34:tw=1;34:ow=1;34:' ; export LS_COLORS
@@ -187,6 +181,12 @@ export HISTFILESIZE=1073741824              # big big history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ## general aliases
+alias ls='ls --color=auto --group-directories-first'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 ### unix timestamp
 #### alias ts='date +%s'
 ### generate random secret
@@ -214,6 +214,12 @@ alias xclip='xclip -selection clipboard'
 alias matlab='/usr/local/MATLAB/R2017b/bin/matlab'
 ### increase stack size in scala
 alias scala='scala -J-Xss256m'
+### uni folders
+alias cfl='cd ~/Documents/courses/y3/t1/cfl'
+alias cis='cd ~/Documents/courses/y3/t1/cis'
+alias cov='cd ~/Documents/courses/y3/t1/cov'
+alias prj='cd ~/Documents/courses/y3/t1/prj'
+
 ## set default terminal editor (for sudoedit)
 export EDITOR='vimx'
 
