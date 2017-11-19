@@ -219,6 +219,14 @@ alias cfl='cd ~/Documents/courses/y3/t1/cfl'
 alias cis='cd ~/Documents/courses/y3/t1/cis'
 alias cov='cd ~/Documents/courses/y3/t1/cov'
 alias prj='cd ~/Documents/courses/y3/t1/prj'
+# misc
+alias def='sdcv'
+alias space='ls -d */ | xargs -I item du -hs item'
+alias diff='diff --color'
+
+## sdcv variables
+export STARDICT_DATA_DIR='~/.stardict/dic'
+export SDCV_PAGER='less'
 
 ## set default terminal editor (for sudoedit)
 export EDITOR='vimx'
