@@ -222,7 +222,7 @@ alias prj='cd ~/Documents/courses/y3/t1/prj'
 # misc
 alias def='sdcv'
 alias space='ls -d */ | xargs -I item du -hs item'
-alias diff='diff --color'
+alias diff='diff --color -u'
 
 ## sdcv variables
 export STARDICT_DATA_DIR='~/.stardict/dic'
