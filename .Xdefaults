@@ -43,7 +43,7 @@ URxvt.letterSpace: -1.5
 Xft.dpi: 96
 Xft.antialias: true
 Xft.rgba: rgb
-Xft.hinting: true
+Xft.hinting: False
 Xft.hintstyle: hintslight
 
 ! tabs

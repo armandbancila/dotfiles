@@ -213,7 +213,7 @@ alias xclip='xclip -selection clipboard'
 ### matlab
 alias matlab='/usr/local/MATLAB/R2017b/bin/matlab'
 ### increase stack size in scala
-alias scala='scala -J-Xss256m'
+alias scala='scala -J-Xss1024m'
 ### uni folders
 alias cfl='cd ~/Documents/courses/y3/t1/cfl'
 alias cis='cd ~/Documents/courses/y3/t1/cis'
