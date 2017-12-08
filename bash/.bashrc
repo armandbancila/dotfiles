@@ -208,6 +208,7 @@ alias du='du -hs'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ### vim compiled with clipboard support
 alias vim='vimx'
+alias v='vimx'
 ### use clipboard
 alias xclip='xclip -selection clipboard'
 ### matlab
