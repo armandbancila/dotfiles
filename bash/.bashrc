@@ -202,19 +202,23 @@ alias mv='mv -vi'
 alias rm='rm -vrf'
 ### pretty rg
 alias rg='rg -p'
+#### rg output for piping
+alias rgp='rg -iN --color never'
 ### make parents as needed
 alias mkdir='mkdir -vp'
-alias du='du -hs'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ### vim compiled with clipboard support
 alias vim='vimx'
-alias v='vimx'
+alias v='vim'
 ### use clipboard
 alias xclip='xclip -selection clipboard'
 ### matlab
 alias matlab='/usr/local/MATLAB/R2017b/bin/matlab'
 ### increase stack size in scala
 alias scala='scala -J-Xss1024m'
+alias s='scala'
+### python alias
+alias p='python'
 ### uni folders
 alias cfl='cd ~/Documents/courses/y3/t1/cfl'
 alias cis='cd ~/Documents/courses/y3/t1/cis'
@@ -224,6 +228,9 @@ alias prj='cd ~/Documents/courses/y3/t1/prj'
 alias def='sdcv'
 alias space='ls -d */ | xargs -I item du -hs item'
 alias diff='diff --color -u'
+alias du='du -hs'
+alias deldupes='fdupes -rdN ./'
+alias gifify='convert -delay 5 -loop 0'
 
 ## sdcv variables
 export STARDICT_DATA_DIR='~/.stardict/dic'
