@@ -154,3 +154,10 @@ if has("statusline")
 	set statusline+=%3*\ 0x%04B\ %* " character under cursor
 endif
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+command! TrimWhitespace call TrimWhitespace()
+

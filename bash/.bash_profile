@@ -1,5 +1,7 @@
 # .bash_profile
 
+export vblank_mode=0
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc

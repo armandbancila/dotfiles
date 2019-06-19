@@ -23,8 +23,24 @@ if [ -f ~/.bash_functions ]; then
 fi
 
 ## functions
+### temp
+a() {
+	~/scripts/av-scan65536 &
+	disown
+	printf "\033c"
+}
+
+b() {
+	pgrep "av-scan65536"
+}
+
+### batch rename images
+batchrename() {
+	ls | cat -n | while read n f; do mv "$f" "file$n.jpg"; done
+}
+
 ### extract common archive formats
-extract () {
+extract() {
 	if [ -f "$*" ] ; then
 		case "$*" in
 			*.tar.bz2) tar xvjf "$*";;
@@ -181,6 +197,8 @@ export HISTFILESIZE=1073741824              # big big history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ## general aliases
+alias dnf='dnf -C'
+# alias dnf='dnf --cacheonly'
 alias ls='ls --color=auto --group-directories-first'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
@@ -236,6 +254,7 @@ alias deldupes='fdupes -rdN ./'
 alias deldirs='find . -type d -empty -delete'
 alias gifify='convert -delay 5 -loop 0'
 alias dirlines=$'find . -name \'*\' | xargs wc -l'
+alias diffw='diff -w -B'
 
 ## sdcv variables
 export STARDICT_DATA_DIR='~/.stardict/dic'
