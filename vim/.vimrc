@@ -31,14 +31,15 @@ endif
 "" key remap
 """ autocomplete in insert mode with tab
 """" inoremap <Tab> <C-X><C-F>
-""" annoying keys
+""" remap useless keys
 """" :help
 nnoremap <F1> <nop>
-"""" record a macro
-nnoremap Q <nop>
+"""" Ex mode
+"""" nnoremap Q <nop>
+map Q @q
 """" brings man page about word under cursor
 nnoremap K <nop>
-"""" inconsistency fix, yank from cursor till end
+"""" inconsistency, yank from cursor till end
 nnoremap Y y$
 
 " searching

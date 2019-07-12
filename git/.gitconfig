@@ -21,3 +21,6 @@
 
 [url "https://gist.github.com/"]
 	insteadOf = gist:
+
+[bash]
+	showDirtyState = false

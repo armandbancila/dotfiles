@@ -1,0 +1,106 @@
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=1048576                   # big big history
+export HISTFILESIZE=1073741824              # big big history
+# export HISTCONTROL=ignoredups:erasedups # no duplicate entries
+# export HISTIGNORE=' *'                  # ignore commands matching re
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# ignore ls without options and builtin commands
+export HISTIGNORE="&:ls:[bf]g:exit"
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+export HISTCONTROL=ignoreboth
+
+# set default terminal editor (for sudoedit)
+export EDITOR='vimx'
+# configure less pager
+# set default terminal pager
+export PAGER='less'
+# set options for less
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+# colored less for man pages
+export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\e[01;38;5;214m' # begin bold
+export LESS_TERMCAP_me=$'\e[0m'           # end mode
+export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\e[38;5;142m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\e[0m'           # end underline
+export LESS_TERMCAP_us=$'\e[04;38;5;208m' # begin underline
+export GROFF_NO_SGR=1                     # for konsole and gnome-terminal
+
+#Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# shell colors in urxvt with gruvbox theme
+# setaf foreground, setab background, set color using ANSI escape
+export MEDIUM_BLACK="$(tput setaf 235)"
+export BLACK="$(tput setaf 0)"
+export RED="$(tput setaf 1)"
+export GREEN="$(tput setaf 2)"
+export YELLOW="$(tput setaf 3)"
+export BLUE="$(tput setaf 4)"
+export PURPLE="$(tput setaf 5)"
+export AQUA="$(tput setaf 6)"
+export LIGHT_GREY="$(tput setaf 7)"
+export DARK_GREY="$(tput setaf 8)"
+export LIGHT_RED="$(tput setaf 9)"
+export LIGHT_GREEN="$(tput setaf 10)"
+export LIGHT_YELLOW="$(tput setaf 11)"
+export LIGHT_BLUE="$(tput setaf 12)"
+export LIGHT_PURPLE="$(tput setaf 13)"
+export LIGHT_AQUA="$(tput setaf 14)"
+export WHITE="$(tput setaf 15)"
+export RESET="$(tput sgr0)" # reset all colors, returns '\e[0m'
+# __git_ps1
+source /usr/share/git-core/contrib/completion/git-prompt.sh
+# or run "git config bash.showDirtyState false"
+# nonempty, it's slow in large repos
+export GIT_PS1_SHOWDIRTYSTATE=0
+# colored prompt
+force_color_prompt=yes
+# export these for subshells
+# export -f parse_git_branch parse_git_status we_are_in_git_work_tree
+# PS1
+# time
+PS1='\[${DARK_GREY}\]$(date +%H:%M:%S) '
+# username and host
+PS1=${PS1}'\[${LIGHT_YELLOW}\]\u@\h '
+# current working directory
+PS1=${PS1}'\[${BLUE}\]\w '
+# git prompt
+PS1=${PS1}'\[${LIGHT_PURPLE}\]$(__git_ps1 "(%s) ")'
+# jobs
+PS1=${PS1}'\[${LIGHT_RED}\]$(jobscount)'
+# end
+PS1=${PS1}'\[${YELLOW}\]\$ \[${RESET}\]'
+export PS1
+export PS2='> '
+export PS3='> '
+export PS4='#? '
+
+# enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+# ls colors
+LS_COLORS=$LS_COLORS:'ex=1;92:di=1;34:tw=1;34:ow=1;34:' ; export LS_COLORS
+# colored GCC warnings and errors
+# default
+# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# cowsay
+export COWPATH='/usr/share/cowsay'
+# set COWPATH so it includes user's cows
+if [ -d "$HOME/.cowsay" ] ; then
+    COWPATH="$COWPATH:$HOME/.cowsay"
+fi
+
+# sdcv variables
+export STARDICT_DATA_DIR='~/.stardict/dic'
+export SDCV_PAGER='less'
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/home/armand/anaconda3/bin:$PATH"
+
