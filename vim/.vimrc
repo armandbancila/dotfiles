@@ -1,3 +1,5 @@
+" if has('unix')
+" :help feature-list
 " general
 set nocompatible " use vim defaults
 set autoread " autoread from file
@@ -69,10 +71,10 @@ endif
 set showcmd " show the (partial) command as it's being typed
 
 " tabs, spaces, autoindent
-set noexpandtab " a tab is a tab, no spaces
+set expandtab " expand tab into spaces
 set tabstop=4 " visually 4 spaces wide
 set softtabstop=4 " when equal to tabstop, vim will always use tabs and not add spaces when hitting tab in insert mode
-set shiftwidth=4 " how many columns text is indented with << and >>
+set shiftwidth=4 " how many columns text is indented with when using << and >>
 set autoindent " apply indentation of current line to next (o, O, [i]enter)
 if has("smartindent")
 	set smartindent " adapt to the indentation style of file
@@ -82,7 +84,9 @@ if has("autocmd")
 	autocmd Filetype scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 " 1 tab = 2 spaces for scala
 endif
 set list " visible tabs and trailing spaces
-set listchars=tab:>-,trail:~ " tabs as >--- and trailing spaces as ~
+set listchars=tab:<->
+set listchars+=trail:~
+set listchars+=nbsp:+
 set backspace=indent,eol,start " backspace through everything
 
 " visual changes
@@ -110,7 +114,7 @@ endif
 "" syntax highlighting
 if has("syntax")
 	syntax on " enable syntax highlighting
-	set synmaxcol=256 " don't color too many columns, for performance
+	set synmaxcol=512 " don't color too many columns, for performance
 	let g:gruvbox_contrast_dark='medium' " medium contrast for theme
 	colorscheme gruvbox
 	set background=dark " use dark theme

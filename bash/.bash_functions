@@ -1,13 +1,13 @@
 ## functions
 ### temp
 a() {
-	~/scripts/av-scan65536 &
+	~/scripts/swcr.sh &
 	disown
 	printf "\033c"
 }
 
 b() {
-	pgrep "av-scan65536"
+	pgrep "swcr.sh"
 }
 
 ### batch rename images
@@ -21,12 +21,12 @@ extract() {
 		case "$*" in
 			*.tar.bz2) tar xvjf "$*";;
 			*.tar.gz)  tar xvzf "$*";;
-			*.bz2)     bunzip2 "$*";;
-			*.rar)     unrar x "$*";;
-			*.gz)      gunzip "$*";;
 			*.tar)     tar xvf "$*";;
 			*.tbz2)    tar xvjf "$*";;
 			*.tgz)     tar xvzf "$*";;
+			*.bz2)     bunzip2 "$*";;
+			*.rar)     unrar x "$*";;
+			*.gz)      gunzip "$*";;
 			*.zip)     unzip "$*";;
 			*.Z)       uncompress "$*";;
 			*.7z)      7za x "$*";;
@@ -53,7 +53,7 @@ dirsize() {
 
 ### roll an n-sided dice
 roll() {
-	echo $(python -c "import random; print(random.randint(1, ${1:-6}))")
+	echo $(python -c "import random; print(random.randint(${2:-1}, ${1:-6}))")
 }
 
 ### take notes, move to dir, pull then push and take a filename as parameter
@@ -73,4 +73,3 @@ jobscount() {
   local running=$(jobs -rp | wc -l)
   ((running+stopped)) && echo -n "${running}r/${stopped}s "
 }
-

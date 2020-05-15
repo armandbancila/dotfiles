@@ -11,7 +11,7 @@ alias dirlines='find . -name \'\''*\'\'' | xargs wc -l'
 alias diffw='diff -w -B'
 alias tmux='tmux -2' # force 256 colors
 alias sudo='sudo '
-alias dnf='dnf --cacheonly'
+# alias dnf='dnf --cacheonly'
 alias ls='ls --color=auto --group-directories-first'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
@@ -37,7 +37,7 @@ alias v='vimx'
 # use clipboard
 alias xclip='xclip -selection clipboard'
 # matlab
-alias matlab='/usr/local/MATLAB/R2017b/bin/matlab'
+alias matlab='/usr/local/MATLAB/R2019b/bin/matlab'
 # increase stack size in scala
 alias scala='scala -J-Xss1024m'
 alias s='scala'
