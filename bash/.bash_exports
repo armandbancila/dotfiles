@@ -66,7 +66,7 @@ force_color_prompt=yes
 # export -f parse_git_branch parse_git_status we_are_in_git_work_tree
 # PS1
 # time
-PS1='\['${DARK_GREY}'\]$(date +%H:%M:%S) '
+PS1='\['${DARK_GREY}'\]$(date +%H%M) '
 # username and host
 PS1=${PS1}'\['${LIGHT_YELLOW}'\]\u@\h '
 # current working directory
@@ -76,7 +76,7 @@ PS1=${PS1}'\['${LIGHT_PURPLE}'\]$(__git_ps1 "(%s) ")'
 # jobs
 PS1=${PS1}'\['${LIGHT_RED}'\]$(jobscount)'
 # end
-PS1=${PS1}'\['${YELLOW}'\]\$ \['${RESET}'\]'
+PS1=${PS1}'\['${LIGHT_YELLOW}'\]\$ \['${RESET}'\]'
 export PS1
 export PS2='> '
 export PS3='> '

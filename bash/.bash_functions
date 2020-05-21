@@ -53,7 +53,7 @@ dirsize() {
 
 ### roll an n-sided dice
 roll() {
-	echo $(python -c "import random; print(random.randint(${2:-1}, ${1:-6}))")
+	$(python -c "import random; print(random.randint(${2:-1}, ${1:-6}))")
 }
 
 ### take notes, move to dir, pull then push and take a filename as parameter
