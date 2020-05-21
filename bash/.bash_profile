@@ -13,7 +13,7 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH
 # export FZF_DEFAULT_COMMAND='rg'
 
-xcalib -c
-xcalib -red 1 1 100 -alter
-xcalib -green 1 1 90 -alter
-xcalib -blue 1 1 90 -alter
+# xcalib -c
+# xcalib -red 1 1 100 -alter
+# xcalib -green 1 1 90 -alter
+# xcalib -blue 1 1 90 -alter

@@ -57,6 +57,7 @@ if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+set magic
 
 " autocomplete
 "" enhance command-line completion
@@ -115,7 +116,7 @@ endif
 if has("syntax")
 	syntax on " enable syntax highlighting
 	set synmaxcol=512 " don't color too many columns, for performance
-	let g:gruvbox_contrast_dark='medium' " medium contrast for theme
+	let g:gruvbox_contrast_dark='soft' " soft, medium or hard contrast for theme
 	colorscheme gruvbox
 	set background=dark " use dark theme
 	set cursorline " highlight current line, may cause slowdown
@@ -137,15 +138,15 @@ if has("statusline")
 	set laststatus=2 " always show statusline
 	" use xterm colors
 	"" blue bg
-	hi User1 ctermfg=235 ctermbg=4
+	hi User1 ctermfg=236 ctermbg=4
 	"" dark yellow bg
-	hi User2 ctermfg=235 ctermbg=3
+	hi User2 ctermfg=236 ctermbg=3
 	"" yellow bg
-	hi User3 ctermfg=235 ctermbg=11
+	hi User3 ctermfg=236 ctermbg=11
 	"" red bg
-	hi User4 ctermfg=235 ctermbg=9
+	hi User4 ctermfg=236 ctermbg=9
 	"" black bg
-	hi User5 ctermfg=15 ctermbg=235
+	hi User5 ctermfg=15 ctermbg=236
 	" colored statusline
 	set statusline=
 	set statusline+=%3*\ %n\ %*     " buffer number

@@ -1,8 +1,8 @@
 ! urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'
 ! general settings
 URxvt.title: rxvt-unicode-256color
-URxvt*geometry: 115x30
-! URxvt*loginShell: True
+URxvt*geometry: 80x40
+URxvt*loginShell: True
 URxvt*scrollTtyOutput:  False ! do not scroll to the bottom when tty receives output
 URxvt*scrollWithBuffer: True
 URxvt*jumpScroll: True
@@ -21,6 +21,7 @@ URxvt.iso14755_52: False
 URxvt.visualBell: True
 URxvt.urgentOnBell: True
 URxvt*inheritPixmap: false
+URxvt*dynamicColors: on
 ! Jump to bottom (prompt) on keypress.
 URxvt*scrollTtyKeypress: true
 URxvt*internalBorder: 0
@@ -37,30 +38,35 @@ URxvt.clipboard.autocopy: True
 
 ! URLs
 URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
-URxvt.urlButton: 1
-URxvt.url-select.underline: True
+! URxvt.matcher.button: 1
+! URxvt.urlButton: 1
+! URxvt.url-select.underline: True
 
 ! fonts
-URxvt.font: xft:Office Code Pro:size=10
-URxvt.boldFont: xft:Office Code Pro Bold:size=10
-URxvt.lineSpace: -1
-URxvt.letterSpace: -1.5
+!URxvt.font: xft:Office Code Pro:size=10:antialias=true
+!URxvt.boldFont: xft:Office Code Pro Bold:size=10:antialias=true
+URxvt.font: xft:Input:pixelsize=14
+URxvt.boldFont: xft:Input:pixelsize=14:bold
+URxvt*lineSpace: 0
+URxvt.letterSpace: 0
 Xft.dpi: 96
-Xft.antialias: true
 Xft.rgba: rgb
-Xft.hinting: False
-Xft.hintstyle: hintslight
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.autohint: 0
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+! Xft.hintstyle: hintslight
 
 ! gruvbox theme
 !! hard contrast: *background: #1d2021
 !! norm contrast: *background: #282828
 !! soft contrast: *background: #32302f
-*background: #282828
+*background: #32302f
 *foreground: #ebdbb2
 !! darkGrey + black
 *color8:  #928374
-*color0:  #1d2021
+*color0:  #32302f
 !! red + darkRed
 *color9:  #fb4934
 *color1:  #cc241d
@@ -96,10 +102,9 @@ URxvt*highlightTextColor: #282828
 ! URxvt*borderColor: 6
 ! URxvt*underlineColor:  yellow
 !! tabs
-URxvt.tabbed.tabbar-fg: 235
+URxvt.tabbed.tabbar-fg: 236
 URxvt.tabbed.tabbar-bg: 3
 URxvt.tabbed.tab-fg: 3
-URxvt.tabbed.tab-bg: 235
+URxvt.tabbed.tab-bg: 236
 URxvt.tabbed.autohide: yes
 URxvt.tabbed.new-button: no
-
