@@ -27,11 +27,6 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-# combine multiline commands into one in history
-shopt -s cmdhist
-
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

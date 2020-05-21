@@ -12,6 +12,10 @@ export HISTIGNORE='&:ls:[bf]g:exit: *'
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 export HISTCONTROL=ignoreboth
+# append to the history file, don't overwrite it
+shopt -s histappend
+# combine multiline commands into one in history
+shopt -s cmdhist
 
 # set default terminal editor (for sudoedit)
 export EDITOR='vimx'
