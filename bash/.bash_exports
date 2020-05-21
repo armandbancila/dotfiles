@@ -5,7 +5,8 @@ export HISTFILESIZE=1073741824              # big big history
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 # Save and reload the history after each command finishes
-export PROMPT_COMMAND='history -a; history -c; history -r;'$PROMPT_COMMAND
+# Append history list to history file, clear history list, load history file into history list
+export PROMPT_COMMAND='history -a; history -c; history -r;'
 # ignore ls without options and builtin commands
 export HISTIGNORE='&:ls:[bf]g:exit: *'
 # don't put duplicate lines or lines starting with space in the history.
