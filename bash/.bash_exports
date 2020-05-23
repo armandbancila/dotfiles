@@ -30,19 +30,7 @@ export EDITOR='vimx'
 # set default terminal pager
 export PAGER='less'
 # set options for less
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
-# colored less for man pages
-export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\e[01;38;5;214m' # begin bold
-export LESS_TERMCAP_me=$'\e[0m'           # end mode
-export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\e[38;5;142m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\e[0m'           # end underline
-export LESS_TERMCAP_us=$'\e[04;38;5;208m' # begin underline
-export GROFF_NO_SGR=1                     # for konsole and gnome-terminal
-
-#Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT -R --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 
 # shell colors in urxvt with gruvbox theme
 # setaf foreground, setab background, set color using ANSI escape
@@ -63,9 +51,28 @@ LIGHT_PURPLE="$(tput setaf 13)"
 LIGHT_AQUA="$(tput setaf 14)"
 WHITE="$(tput setaf 15)"
 BACKGROUND="$(tput setaf 236)"
+REVERSE="$(tput rev)"
+INVISIBLE="$(tput invis)"
+START_STANDOUT="$(tput smso)"
+END_STANDOUT="$(tput rmso)"
+START_UNDERLINE="$(tput smul)"
+END_UNDERLINE="$(tput rmul)"
+BLINK="$(tput blink)"
 BOLD="$(tput bold)"
-NORMAL="$(tput sgr0)"
 RESET="$(tput sgr0)" # reset all colors, returns '\e[0m'
+
+# colored less for man pages
+export LESS_TERMCAP_mb="$BLINK"           # begin blinking
+export LESS_TERMCAP_md="$BOLD$YELLOW"            # begin bold
+export LESS_TERMCAP_me="$RESET"           # end mode
+export LESS_TERMCAP_se="$END_STANDOUT"    # end standout-mode
+export LESS_TERMCAP_so="$START_STANDOUT$LIGHT_YELLOW"  # begin standout-mode - info box
+export LESS_TERMCAP_ue="$END_UNDERLINE$RESET"   # end underline
+export LESS_TERMCAP_us="$START_UNDERLINE$LIGHT_YELLOW" # begin underline
+export GROFF_NO_SGR=1                     # for konsole and gnome-terminal
+
+#Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
 
 # __git_ps1
 source /usr/share/git-core/contrib/completion/git-prompt.sh
@@ -88,7 +95,7 @@ PS1=${PS1}'\['${LIGHT_PURPLE}'\]$(__git_ps1 "(%s) ")'
 # jobs
 PS1=${PS1}'\['${LIGHT_RED}'\]$(jobscount)'
 # end
-PS1=${PS1}'\['${LIGHT_YELLOW}'\]\$ \['${RESET}'\]'
+PS1=${PS1}'\['${LIGHT_GREEN}'\]\$ \['${RESET}'\]'
 export PS1
 export PS2='> '
 export PS3='> '

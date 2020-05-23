@@ -47,8 +47,8 @@ URxvt.url-launcher: /usr/bin/firefox
 !URxvt.boldFont: xft:Office Code Pro Bold:size=10:antialias=true
 URxvt.font: xft:Input:pixelsize=14
 URxvt.boldFont: xft:Input:pixelsize=14:bold
-URxvt*lineSpace: 0
-URxvt.letterSpace: 0
+URxvt*lineSpace: -1
+URxvt.letterSpace: -1
 Xft.dpi: 96
 Xft.rgba: rgb
 Xft.antialias: 1

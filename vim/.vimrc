@@ -141,27 +141,27 @@ if has("statusline")
 	" set statusline=%F\ %m " full path and file modified marker
 	set laststatus=2 " always show statusline
 	" use xterm colors
-	"" blue bg
-	hi User1 ctermfg=236 ctermbg=4
-	"" dark yellow bg
+	hi User1 ctermfg=236 ctermbg=11
 	hi User2 ctermfg=236 ctermbg=3
-	"" yellow bg
-	hi User3 ctermfg=236 ctermbg=11
-	"" red bg
-	hi User4 ctermfg=236 ctermbg=9
-	"" black bg
-	hi User5 ctermfg=15 ctermbg=236
+	hi User3 ctermfg=236 ctermbg=3
+	hi User4 ctermfg=236 ctermbg=4
+	hi User5 ctermfg=236 ctermbg=1
+	hi User6 ctermfg=236 ctermbg=236
+	hi User7 ctermfg=8   ctermbg=236
+	hi User8 ctermfg=236 ctermbg=3
+	hi User9 ctermfg=236 ctermbg=11
 	" colored statusline
 	set statusline=
-	set statusline+=%3*\ %n\ %*     " buffer number
+	set statusline+=%1*\ %n\ %*     " buffer number
 	set statusline+=%2*\ %{&ff}%*   " file format
-	set statusline+=%2*%y\ %*       " file type
-	set statusline+=%1*\ %<%F\ %*   " full path
-	set statusline+=%4*%m%*         " modified flag
-	set statusline+=%5*\ %=%5l\ %*  " current line
-	set statusline+=%5*/\ %L\ %*    " total lines
-	set statusline+=%2*\ %4v\ %*    " virtual column number
-	set statusline+=%3*\ 0x%04B\ %* " character under cursor
+	set statusline+=%3*%y\ %*       " file type
+	set statusline+=%4*\ %<%F\ %*   " full path
+    set statusline+=%5*%m%*         " modified flag
+	set statusline+=%6*\ %=\ %*     " modified flag
+	set statusline+=%7*\ %=%5l\ %*  " current line
+	set statusline+=%7*/\ %L\ %*    " total lines
+	set statusline+=%8*\ %6v\ %*    " virtual column number
+	set statusline+=%9*\ 0x%04B\ %* " character under cursor
 endif
 
 fun! TrimWhitespace()
