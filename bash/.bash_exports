@@ -42,7 +42,7 @@ BLUE="$(tput setaf 4)"
 PURPLE="$(tput setaf 5)"
 AQUA="$(tput setaf 6)"
 LIGHT_GREY="$(tput setaf 7)"
-DARK_GREY="$(tput setaf 8)"
+GREY="$(tput setaf 8)"
 LIGHT_RED="$(tput setaf 9)"
 LIGHT_GREEN="$(tput setaf 10)"
 LIGHT_YELLOW="$(tput setaf 11)"
@@ -62,14 +62,14 @@ BOLD="$(tput bold)"
 RESET="$(tput sgr0)" # reset all colors, returns '\e[0m'
 
 # colored less for man pages
-export LESS_TERMCAP_mb="$BLINK"           # begin blinking
-export LESS_TERMCAP_md="$BOLD$YELLOW"            # begin bold
-export LESS_TERMCAP_me="$RESET"           # end mode
-export LESS_TERMCAP_se="$END_STANDOUT"    # end standout-mode
-export LESS_TERMCAP_so="$START_STANDOUT$LIGHT_YELLOW"  # begin standout-mode - info box
-export LESS_TERMCAP_ue="$END_UNDERLINE$RESET"   # end underline
-export LESS_TERMCAP_us="$START_UNDERLINE$LIGHT_YELLOW" # begin underline
-export GROFF_NO_SGR=1                     # for konsole and gnome-terminal
+export LESS_TERMCAP_mb=${BLINK}                         # begin blinking
+export LESS_TERMCAP_md=${BOLD}${LIGHT_YELLOW}           # begin bold
+export LESS_TERMCAP_me=${RESET}                         # end mode
+export LESS_TERMCAP_se=${END_STANDOUT}${RESET}          # end standout-mode
+export LESS_TERMCAP_so=${START_STANDOUT}${LIGHT_YELLOW} # begin standout-mode - info box
+export LESS_TERMCAP_ue=${END_UNDERLINE}${RESET}         # end underline
+export LESS_TERMCAP_us=${START_UNDERLINE}${YELLOW}      # begin underline
+export GROFF_NO_SGR=1                                   # for konsole and gnome-terminal
 
 #Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -85,17 +85,17 @@ force_color_prompt=yes
 # export -f parse_git_branch parse_git_status we_are_in_git_work_tree
 # PS1
 # time
-PS1='\['${DARK_GREY}'\]$(date +%H%M) '
+PS1=${GREY}$(date +%H%M)' '
 # username and host
-PS1=${PS1}'\['${LIGHT_YELLOW}'\]\u@\h '
+PS1=${PS1}${LIGHT_YELLOW}'\u@\h '
 # current working directory
-PS1=${PS1}'\['${BLUE}'\]\w '
+PS1=${PS1}${BLUE}'\w '
 # git prompt
-PS1=${PS1}'\['${LIGHT_PURPLE}'\]$(__git_ps1 "(%s) ")'
+PS1=${PS1}${LIGHT_PURPLE}'$(__git_ps1 "(%s) ")'
 # jobs
-PS1=${PS1}'\['${LIGHT_RED}'\]$(jobscount)'
+PS1=${PS1}${LIGHT_RED}'$(jobscount)'
 # end
-PS1=${PS1}'\['${LIGHT_GREEN}'\]\$ \['${RESET}'\]'
+PS1=${PS1}${GREEN}'\$ '${RESET}
 export PS1
 export PS2='> '
 export PS3='> '
