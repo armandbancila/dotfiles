@@ -59,12 +59,10 @@ roll() {
 ### take notes, move to dir, pull then push and take a filename as parameter
 ### if filename param is present, append timestamp to file and open it in vim
 tn() {
-	cd ~/Documents/notes
+	pushd ~/Documents/notes
 	./sync.sh
-	if [ ! -z "$1" ]; then
-		echo -e "\n# note taken on $(date --rfc-3339='seconds') $(date +%s)\n" >> $1
-		vimx "+ normal G$" +startinsert $1
-	fi
+    echo -e "\n# $(date --rfc-email) ($(date +%s))\n" >> temp
+    vim "+ normal G$" +startinsert temp
 }
 
 ### return number of jobs

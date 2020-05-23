@@ -77,9 +77,13 @@ set tabstop=4 " visually 4 spaces wide
 set softtabstop=4 " when equal to tabstop, vim will always use tabs and not add spaces when hitting tab in insert mode
 set shiftwidth=4 " how many columns text is indented with when using << and >>
 set autoindent " apply indentation of current line to next (o, O, [i]enter)
+
 if has("smartindent")
 	set smartindent " adapt to the indentation style of file
 endif
+filetype on
+filetype plugin on
+filetype indent on
 if has("autocmd")
 	autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 " 1 tab = 4 spaces for python
 	autocmd Filetype scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 " 1 tab = 2 spaces for scala

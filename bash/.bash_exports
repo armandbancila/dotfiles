@@ -1,4 +1,3 @@
-export TERM=xterm-256color 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=1048576                   # big big history
 export HISTFILESIZE=1073741824              # big big history
@@ -16,6 +15,14 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 # combine multiline commands into one in history
 shopt -s cmdhist
+# case-insensitive globbing
+shopt -s nocaseglob
+# cd autocorrect
+shopt -s cdspell
+# check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+# turn on confirmation for history expansion (histexpand)
+shopt -s histverify
 
 # set default terminal editor (for sudoedit)
 export EDITOR='vimx'
