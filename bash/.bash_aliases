@@ -43,12 +43,3 @@ alias scala='scala -J-Xss1024m'
 alias s='scala'
 # python alias
 alias p='python'
-# uni folders
-alias cfl='cd ~/Documents/courses/y3/t1/cfl'
-alias cis='cd ~/Documents/courses/y3/t1/cis'
-alias cov='cd ~/Documents/courses/y3/t1/cov'
-alias pre='cd ~/Documents/courses/y3/t2/pre'
-alias com='cd ~/Documents/courses/y3/t2/com'
-alias ome='cd ~/Documents/courses/y3/t2/ome'
-alias prj='cd ~/Documents/courses/y3/prj'
-

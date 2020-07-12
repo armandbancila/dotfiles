@@ -1,7 +1,7 @@
 ## functions
 ### temp
 a() {
-	~/scripts/swcr.sh &
+	$HOME/scripts/swcr.sh &
 	disown
 	printf "\033c"
 }
@@ -59,7 +59,7 @@ roll() {
 ### take notes, move to dir, pull then push and take a filename as parameter
 ### if filename param is present, append timestamp to file and open it in vim
 tn() {
-	pushd ~/Documents/notes
+	pushd $HOME/Documents/notes
 	./sync.sh
     echo -e "\n# $(date --rfc-email) ($(date +%s))\n" >> temp
     vim "+ normal G$" +startinsert temp

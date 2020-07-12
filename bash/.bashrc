@@ -4,16 +4,16 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f ~/.bash_exports ]; then
-	. ~/.bash_exports
+if [ -f $HOME/.bash_exports ]; then
+	. $HOME/.bash_exports
 fi
 
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+	. $HOME/.bash_aliases
 fi
 
-if [ -f ~/.bash_functions ]; then
-	. ~/.bash_functions
+if [ -f $HOME/.bash_functions ]; then
+	. $HOME/.bash_functions
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -28,5 +28,5 @@ if ! shopt -oq posix; then
 fi
 
 # fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
 
