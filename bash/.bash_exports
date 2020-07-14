@@ -30,7 +30,7 @@ export EDITOR='vimx'
 # set default terminal pager
 export PAGER='less'
 # set options for less
-export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT -R --HILITE-UNREAD --tabs=4 --no-init --window=-4 -N'
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --HILITE-UNREAD --tabs=4 --no-init --window=-4 --RAW-CONTROL-CHARS'
 
 # shell colors in urxvt with gruvbox theme
 # setaf foreground, setab background, set color using ANSI escape

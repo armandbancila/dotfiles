@@ -18,8 +18,10 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-# windows-style clear terminal
-alias cls='printf "\033c"'
+# fix the terminal
+alias cls="printf 'a\033c'"
+# remove the annoying cookie prompts
+alias lynx='lynx -cookies -accept_all_cookies'
 # verbose recursive
 alias cp='cp -vr'
 # inform of overwrite
@@ -27,6 +29,7 @@ alias mv='mv -vi'
 # recursive, force
 alias rm='rm -vrf'
 # rg output for piping
+alias rgl='rg --color always'
 alias rgp='rg -iN --no-messages'
 # make parents as needed
 alias mkdir='mkdir -vp'
