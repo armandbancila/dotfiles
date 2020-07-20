@@ -33,3 +33,11 @@ tn() {
     printf '%s\n' $'\n'"# Wrriten on $(date --rfc-email) ($(date +%s))."$'\n' >> temp
     vim "+ normal G$" +startinsert temp
 }
+
+# return number of jobs
+# used in PS1
+jobscount() {
+  local stopped=$(jobs -sp | wc -l)
+  local running=$(jobs -rp | wc -l)
+  ((running+stopped)) && echo -n "${running}r/${stopped}s "
+}
