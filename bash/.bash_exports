@@ -132,7 +132,7 @@ if [ -d "$HOME/.cowsay" ] ; then
 fi
 
 # sdcv variables
-export STARDICT_DATA_DIR='$HOME/.stardict/dic'
+export STARDICT_DATA_DIR='/usr/share/stardict/dic'
 export SDCV_PAGER='less'
 
 # added by Anaconda3 4.4.0 installer

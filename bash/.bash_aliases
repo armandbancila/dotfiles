@@ -1,4 +1,3 @@
-alias def='sdcv'
 alias space='ls -d */ | xargs -I item du -hs item'
 alias diff='diff --color -u'
 alias du='du -hs'
@@ -40,3 +39,5 @@ alias matlab='/usr/local/MATLAB/R2019b/bin/matlab'
 alias scala='scala -J-Xss1024m'
 alias s='scala'
 alias p='python'
+# dictionary
+alias def='sdcv --use-dict "Merriam-Websters Collegiate"'
