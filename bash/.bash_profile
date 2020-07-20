@@ -17,3 +17,4 @@ export PATH
 # xcalib -red 1 1 100 -alter
 # xcalib -green 1 1 90 -alter
 # xcalib -blue 1 1 90 -alter
+if [ -e /home/armand/.nix-profile/etc/profile.d/nix.sh ]; then . /home/armand/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

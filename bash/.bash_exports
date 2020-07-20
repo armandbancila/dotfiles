@@ -26,6 +26,7 @@ shopt -s histverify
 
 # set default terminal editor (for sudoedit)
 export EDITOR='vimx'
+export VISUAL='vimx'
 # configure less pager
 # set default terminal pager
 export PAGER='less'
