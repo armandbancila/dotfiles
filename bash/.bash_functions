@@ -29,9 +29,11 @@ roll() {
 # if filename param is present, append timestamp to file and open it in vim
 tn() {
     cd $HOME/Documents/text/notes
-    ./sync.sh
-    printf '%s\n' $'\n'"# Wrriten on $(date --rfc-email) ($(date +%s))."$'\n' >> temp
-    vim "+ normal G$" +startinsert temp
+    if [ "${1}" != "q" ]; then
+        ./sync.sh
+        printf '%s\n' $'\n'"# Written on $(date --rfc-email) ($(date +%s))."$'\n' >> temp
+        vim "+ normal G$" +startinsert temp
+    fi
 }
 
 # return number of jobs

@@ -17,12 +17,6 @@ alias egrep='egrep --color=auto'
 alias cls="printf 'a\033c'"
 # remove the annoying cookie prompts
 alias lynx='lynx -cookies -accept_all_cookies'
-# verbose recursive
-alias cp='cp -vr'
-# inform of overwrite
-alias mv='mv -vi'
-# recursive, force
-alias rm='rm -vrf'
 # rg output for piping
 alias rgl='rg --color always'
 alias rgp='rg -iN --no-messages'
@@ -40,4 +34,4 @@ alias scala='scala -J-Xss1024m'
 alias s='scala'
 alias p='python'
 # dictionary
-alias def='sdcv --use-dict "Merriam-Websters Collegiate"'
+alias define='sdcv --use-dict "Merriam-Websters Collegiate"'
